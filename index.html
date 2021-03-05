@@ -8,24 +8,29 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <title>Weather Dashboard</title>
 </head>
+
 <body>
-    <header>
+    <header class = "container-fluid text-center text-white bg-dark p-2">
         <h1>Weather Dashboard</h1>
     </header>
 
-    <div class="container">
+    <div class= "container-fluid text-center">
         <h2>Select a City</h2>
     <form>
-        <div class="form-group">
-        <input type="text" id="search" class="form-control" placeholder="search">
+        <div class= "input-group">
+        <input type="text" id="search-city" class="form-control text-center" placeholder="enter your city name">
         </div>
-        <div class="form-group">
-            <button class="btn btn-primary btn-block" id="fetch-button">Search</button>
+        <div class= "input-group-append">
+            <button class= "btn btn-primary btn-block" id= "search-button">Search</button>
+        </div>
+        
+        <div class= "container2-fluid">
+
         </div>
     </form>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="script.js"></script>
+
 </html>
