@@ -1,13 +1,14 @@
 $(document).ready(function() {
 
-console.log("hello")
+    console.log("hello")
 
-var searchButton = $("#search-button")
-searchButton.on("click", searchFunction)
+    var searchButton = $("#search-button")
+    searchButton.click(searchFunction)
 
-function searchFunction() {
-    var searchCity = "miami"
-    console.log(searchCity)
+    function searchFunction(event) {
+        event.preventDefault()
+        var searchCity = "miami"
+        console.log(searchCity)
 
         $.ajax({
             type: "GET",
@@ -15,8 +16,12 @@ function searchFunction() {
             dataType: "json",
             success: function(data) {
                 console.log(data)
-}
-})}
+
+            }
+
+        })
+    }
+    // searchFunction()
 })
 //var city = "#city-search";
 // $("searchbar")
