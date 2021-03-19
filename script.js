@@ -18,6 +18,7 @@ $(document).ready(function() {
             dataType: "json",
             success: function(data) {
                 console.log(data)
+                getForecast(searchCity)
                 searchUV(data.coord.lon, data.coord.lat)
                 displayWeather(data)
             }
@@ -43,6 +44,30 @@ $(document).ready(function() {
 
         })
     }
+
+    function getForecast (searchCity){
+    $.ajax ({
+        type: "GET",
+        url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=26bbe025e9f5a2567433d6f2ec405c5e&units=imperial",
+        dataType: "json",
+        success: function(data) {
+
+            console.log(data.list)
+            for (i=0;i<5;i++) {
+                var cardHeading = $("<h3></h3>")
+                var card = $("<div></div>")
+                cardHeading.text("temperature: " + data.list[i].main.temp)
+                card.append(cardHeading)
+
+                var cardWindSpeed = $("<h3><</h3>")
+                $("#forecast-container").append(card)
+
+            }
+        }
+
+
+    })
+}
     // searchFunction()
 })
 //var city = "#city-search";
